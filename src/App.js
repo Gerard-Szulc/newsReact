@@ -22,6 +22,11 @@ class App extends Component {
       .catch(()=>this.setState({refreshing: false}))
   }
 
+  handleRefresh(){
+    this.setState({
+      refreshing: true},()=> this.fetchNews()
+    )
+  }
   render() {
     return (
       <div>
