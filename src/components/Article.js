@@ -16,7 +16,7 @@ export default class Article extends Component {
 
                 <div key={index} style={{margin: 10}}>
                   <a href={article.url} style={{color: 'black', textDecoration: 'none'}}>
-                    <img style={{width: 320, height: 180}} src={article.urlToImage} alt={article.title}/>
+                    <img style={{width: 320, height: 180}} src={article.urlToImage} alt={article.title.slice(0,15)}/>
                     <h1 style={{fontSize: 15, maxWidth: 320}}> {article.title}</h1>
                   </a>
                   <p style={{fontSize: 12, maxWidth: 320}}>{article.description}</p>
