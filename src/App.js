@@ -1,18 +1,33 @@
 import React, { Component } from 'react';
+import {getNews} from "./news";
+
 import logo from './logo.svg';
 import './App.css';
+import Article from "./components/articles";
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = { articles: [], refreshing : true}
+    this.fetchNews = this.fetchNews.bind(this)
+  }
+
+  componentDidMount(){
+    this.fetchNews();
+  }
+
+  fetchNews(){
+    getNews()
+      .then(articles=> this.setState({articles, refreshing: false}))
+      .catch(()=>this.setState({refreshing: false}))
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <ul>
+          <Article article={item}/>
+        </ul>
       </div>
     );
   }
