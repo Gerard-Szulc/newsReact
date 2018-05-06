@@ -34,25 +34,32 @@ class App extends Component {
 
   render() {
       return (
-        <div>
+        <div >
         <button onClick={this.handleRefresh}>Reload</button>
-        <ul>
+        <div style={{display: 'flex', justifyContent: 'space-between',
+        flexWrap: 'wrap'}}>
           {
             this.state.articles.map(
               (article,index) => (
-              <li key={index}>
-                <img style={{width: 160, height: 90}} src={article.urlToImage}/>
-                <h1> {article.title}</h1>
-                <p>{article.author}</p>
 
-                </li>
+
+              <div key={index}>
+                <a href={article.url} style={{}}>
+                <img style={{width: 320, height: 180}} src={article.urlToImage}/>
+                <h1 style={{fontSize: 15, maxWidth: 160}}> {article.title}</h1>
+                </a>
+                <p style={{fontSize: 10}}>{article.author}</p>
+
+                <p style={{fontSize: 10, maxWidth: 160}}>{article.description}</p>
+                </div>
+
               )
 
 
             )
           }
 
-        </ul>
+        </div>
         </div>
 
 
