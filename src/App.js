@@ -1,10 +1,13 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import {getNews} from "./news";
 import Article from "./components/Article";
+import Pogoda from "./Weather/Pogoda";
 
 class App extends Component {
 
-  state = {articles: [], refreshing: true};
+  state = {
+    articles: [],
+    refreshing: true};
 
   componentDidMount() {
     this.fetchNews();
@@ -25,11 +28,14 @@ class App extends Component {
 
   render() {
     return (
+      <Fragment>
+      <Pogoda/>
       <Article
         handleRefresh={this.handleRefresh}
         articles={this.state.articles}
 
       />
+      </Fragment>
     )
   }
 }
