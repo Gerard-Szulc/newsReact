@@ -20,8 +20,9 @@ class Pogoda extends Component {
 
   }
 
-  handleRefresh = () => {
-    this.setState({refreshing: true},
+  handleWRefresh = () => {
+    this.setState({
+        refreshing: true},
       () => this.fetchWeather()
     )
 
@@ -30,7 +31,7 @@ class Pogoda extends Component {
   render() {
     return (
       <div className="App">
-        <WeatherView handleRefresh={this.handleRefresh} weather={this.state.weather}/>
+        <WeatherView handleWRefresh={this.handleWRefresh} weather={this.state.weather}/>
       </div>
     );
   }

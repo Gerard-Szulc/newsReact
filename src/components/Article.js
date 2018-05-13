@@ -14,13 +14,16 @@ export default class Article extends Component {
             this.props.articles.map(
               (article, index) => (
 
-                <div key={index} style={{margin: 10}}>
+                <div key={index} style={{margin: 20}}>
                   <a href={article.url} style={{color: 'black', textDecoration: 'none'}}>
-                    <img style={{width: 320, height: 180}} src={article.urlToImage} alt={article.title.slice(0,15)}/>
+                    {article.urlToImage !== null ?
+                      <img style={{width: 320, height: 180}} src={ article.urlToImage} alt={article.title.slice(0,15)}/>:
+                      <img style={{width: 320, height: 180}} src={'https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Images-HD-Diamond-Pattern-PIC-WPB009691.jpg'} alt={article.title.slice(0,15)}/>
+                    }
                     <h1 style={{fontSize: 15, maxWidth: 320}}> {article.title}</h1>
                   </a>
-                  <p style={{fontSize: 12, maxWidth: 320}}>{article.description}</p>
-                  <p style={{fontSize: 10}}>{article.author}</p>
+                  <p style={{fontSize: 12, minWidth: 250, maxWidth: 320}}>{article.description}</p>
+                  <p style={{fontSize: 10, maxWidth: 320}}>{article.author}</p>
                   <Moment format="YYYY/MM/DD" date={article.publishedAt} style={{fontSize: 10}}/>
                 </div>
 

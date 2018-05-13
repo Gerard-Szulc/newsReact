@@ -20,7 +20,9 @@ class App extends Component {
   }
 
   handleRefresh = () => {
-    this.setState({refreshing: true},
+    this.setState({
+        articles: [],
+        refreshing: true},
       () => this.fetchNews()
     )
 
