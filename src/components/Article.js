@@ -18,7 +18,7 @@ export default class Article extends Component {
                   <a href={article.url} style={{color: 'black', textDecoration: 'none'}}>
                     {article.urlToImage !== null ?
                       <img style={{width: 320, height: 180}} src={ article.urlToImage} alt={article.title.slice(0,15)}/>:
-                      <img style={{width: 320, height: 180}} src={'https://wallpaper.wiki/wp-content/uploads/2017/04/wallpaper.wiki-Images-HD-Diamond-Pattern-PIC-WPB009691.jpg'} alt={article.title.slice(0,15)}/>
+                      <img style={{width: 320, height: 180}} src={'https://cst.org.uk/data/image/8/e/8e3e848cbd24bdb85a7c97869ec77386.1451995352.jpg'} alt={article.title.slice(0,15)}/>
                     }
                     <h1 style={{fontSize: 15, maxWidth: 320}}> {article.title}</h1>
                   </a>

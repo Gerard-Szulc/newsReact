@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "firebase": "^5.0.2",
+    "gpu.js": "^1.2.0",
     "moment": "^2.22.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
