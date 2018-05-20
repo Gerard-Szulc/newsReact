@@ -2,7 +2,7 @@ import React, {Component, Fragment} from 'react';
 import {getNews} from "./news";
 import Article from "./components/Article";
 import Pogoda from "./Weather/Pogoda";
-import { UserProvider, withUser } from './contexts/Users';
+import { withUser } from './contexts/Users';
 import SignInForm from './components/authentication/SignIn'
 import SignUpForm from './components/authentication/SignUp'
 
@@ -11,6 +11,7 @@ class App extends Component {
   state = {
     articles: [],
     refreshing: true,
+    selectValue: 'pl'
 };
 
   componentDidMount(){
@@ -18,7 +19,9 @@ class App extends Component {
   }
 
   fetchNews() {
-    getNews()
+      this.state.selectValue === null && this.setState({selectValue: 'us'}) 
+    
+    getNews(this.state.selectValue)
     .then(articles => this.setState(
       {articles, refreshing: false}
     )
@@ -28,7 +31,6 @@ class App extends Component {
        {refreshing: false}
     )
   );
-
   }
 
   handleRefresh = () => {
@@ -40,14 +42,20 @@ class App extends Component {
 
   };
 
- 
+  handleSelectChange = event => {
+this.setState({
+  selectValue: event.target.value,
+      },this.handleRefresh())
+  }
+
+  handleSelectSubmit = event =>{
+    this.handleRefresh()
+    event.preventDefault();
+  }
+
 
   render() {
     
-    
-  
-
-
     return (
     
         this.props.user === null ? (
@@ -56,13 +64,26 @@ class App extends Component {
                 <SignUpForm/>
               </div>
             ) : 
-            (<Fragment>        
+            (
+            <Fragment>        
                   <Pogoda/>
-                  <p>Signed user: {this.props.user.email} <button onClick={this.props.signOut}> Sign out</button></p>
+                  <form onSubmit={this.handleSelectSubmit} >
+                  <label>
+                    <select value={this.state.selectValue} onChange={this.handleSelectChange}>
+                      <option value='us'>USA</option>
+                      <option value='pl'>Poland</option>
+                      <option value='de'>Germany</option>
+                      <option value='gb'>England</option>
+                    </select>
+                  </label>
+                  </form>
+                  <p>Signed user: {this.props.user.email} <button onClick={this.props.signOut}>Sign out</button></p>
                   <Article
                   handleRefresh={this.handleRefresh}
                   articles={this.state.articles}
-              /></Fragment>)
+              />
+            </Fragment>
+            )
           
       
     )
