@@ -9,10 +9,13 @@ export class UserProvider extends Component {
   state = {
     signInError: null,
     user: null,
+    signing: null,
     signIn: (username, password) => {
+      this.setState({signing: true})
       firebase.auth().signInWithEmailAndPassword(username, password).catch(
         error => this.setState({
-          signInError: error
+          signInError: error,
+          signing: false
         })
       )
     },
@@ -24,7 +27,8 @@ export class UserProvider extends Component {
 
   componentDidMount() {
     this.unsubscribe = firebase.auth().onAuthStateChanged(
-      user => this.setState({ user: user })
+      user => this.setState({ user: user ,
+      signing: false})
     )
   }
 

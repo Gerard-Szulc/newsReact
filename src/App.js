@@ -5,7 +5,7 @@ import Pogoda from "./Weather/Pogoda";
 import { withUser } from './contexts/Users';
 import SignInForm from './components/authentication/SignIn'
 import SignUpForm from './components/authentication/SignUp'
-
+import logo from './logo.svg'
 
 class App extends Component {
   state = {
@@ -59,9 +59,12 @@ this.setState({
     return (
     
         this.props.user === null ? (
-              <div>
-                <SignInForm/>
-                <SignUpForm/>
+              
+              
+                this.props.signing ===  true ?
+               <img src={logo} className={'App-logo'}/> : <div>
+              <SignInForm/>
+              <SignUpForm/>
               </div>
             ) : 
             (

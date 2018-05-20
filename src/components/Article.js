@@ -6,10 +6,7 @@ export default class Article extends Component {
     return (
       <div>
         <button onClick={this.props.handleRefresh}>Reload</button>
-        <div style={{
-          display: 'flex', justifyContent: 'space-between',
-          flexWrap: 'wrap'
-        }}>
+        <div className="news-container">
           {
             this.props.articles.map(
               (article, index) => (
@@ -17,8 +14,8 @@ export default class Article extends Component {
                 <div key={index} style={{margin: 20}}>
                   <a href={article.url} style={{color: 'black', textDecoration: 'none'}}>
                     {article.urlToImage !== null ?
-                      <img style={{width: 320, height: 180}} src={ article.urlToImage} alt={article.title.slice(0,15)}/>:
-                      <img style={{width: 320, height: 180}} src={'https://cst.org.uk/data/image/8/e/8e3e848cbd24bdb85a7c97869ec77386.1451995352.jpg'} alt={article.title.slice(0,15)}/>
+                      <img style={{maxWidth: 320, maxHeight: 180}} src={ article.urlToImage} alt={article.title.slice(0,15)}/>:
+                      <img style={{maxWidth: 320, maxHeight: 180}} src={'https://cst.org.uk/data/image/8/e/8e3e848cbd24bdb85a7c97869ec77386.1451995352.jpg'} alt={article.title.slice(0,15)}/>
                     }
                     <h1 style={{fontSize: 15, maxWidth: 320}}> {article.title}</h1>
                   </a>
