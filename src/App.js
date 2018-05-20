@@ -6,6 +6,7 @@ import { withUser } from './contexts/Users';
 import SignInForm from './components/authentication/SignIn'
 import SignUpForm from './components/authentication/SignUp'
 import logo from './logo.svg'
+import CountryContentSelect from './components/CountryContentSelect'
 
 class App extends Component {
   state = {
@@ -59,10 +60,8 @@ this.setState({
     return (
     
         this.props.user === null ? (
-              
-              
                 this.props.signing ===  true ?
-               <img src={logo} className={'App-logo'}/> : <div>
+               <img src={logo} className={'App-logo'} alt={'logo'}/> : <div>
               <SignInForm/>
               <SignUpForm/>
               </div>
@@ -70,16 +69,7 @@ this.setState({
             (
             <Fragment>        
                   <Pogoda/>
-                  <form onSubmit={this.handleSelectSubmit} >
-                  <label>
-                    <select value={this.state.selectValue} onChange={this.handleSelectChange}>
-                      <option value='us'>USA</option>
-                      <option value='pl'>Poland</option>
-                      <option value='de'>Germany</option>
-                      <option value='gb'>England</option>
-                    </select>
-                  </label>
-                  </form>
+                  <CountryContentSelect handleSelectSubmit={this.handleSelectSubmit} selectValue={this.state.selectValue} handleSelectChange={this.handleSelectChange}/>
                   <p>Signed user: {this.props.user.email} <button onClick={this.props.signOut}>Sign out</button></p>
                   <Article
                   handleRefresh={this.handleRefresh}
