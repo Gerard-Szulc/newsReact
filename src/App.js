@@ -12,7 +12,7 @@ class App extends Component {
   state = {
     articles: [],
     refreshing: true,
-    selectValue: 'pl'
+    selectValue: 'us'
 };
 
   componentDidMount(){

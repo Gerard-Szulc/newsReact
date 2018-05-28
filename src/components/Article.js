@@ -15,7 +15,17 @@ export default class Article extends Component {
                <div key={index} style={{padding: 10,margin: 0, backgroundColor: backg,}}>
                   <a href={article.url} style={{color: 'black', textDecoration: 'none'}}>
                     {article.urlToImage !== null ?
-                      <img style={{display: 'block',maxWidth: 320, maxHeight: 180, marginLeft: 'auto', marginRight: 'auto'}} src={ article.urlToImage} alt={article.title.slice(0,15)}/>:
+                      <img className={'articleImage'} style={{
+                        display: 'block',
+                        maxWidth: 320, 
+                        maxHeight: 180, 
+                        marginLeft: 'auto', 
+                        marginRight: 'auto', 
+                      }} 
+                      src={ article.urlToImage} 
+                      alt={article.title.slice(0,15)}
+                      />
+                      :
                       <img style={{display: 'block' ,maxWidth: 320, maxHeight: 180, marginLeft: 'auto', marginRight: 'auto'}} src={'https://cst.org.uk/data/image/8/e/8e3e848cbd24bdb85a7c97869ec77386.1451995352.jpg'} alt={article.title.slice(0,15)}/>
                     }
                     <h1 style={{fontSize: 15, maxWidth: 320}}> {article.title}</h1>
