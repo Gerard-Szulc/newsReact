@@ -2,7 +2,7 @@
   "name": "nesappnienative",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://gerard-szulc.github.io/reactNews",
+  "homepage": "https://gerard-szulc.github.io/newsReact",
   "dependencies": {
     "enzyme": "^3.3.0",
     "firebase": "^5.0.2",
