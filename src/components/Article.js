@@ -22,7 +22,7 @@ export default class Article extends Component {
                         marginLeft: 'auto', 
                         marginRight: 'auto', 
                       }} 
-                      src={ article.urlToImage} 
+                      src={article.urlToImage} 
                       alt={article.title.slice(0,15)}
                       />
                       :
