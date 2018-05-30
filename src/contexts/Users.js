@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import firebase from 'firebase'
-
+import {auth} from 'firebase'
 const UserContext = React.createContext()
 
 export const UserConsumer = UserContext.Consumer
@@ -10,23 +9,25 @@ export class UserProvider extends Component {
     signInError: null,
     user: null,
     signing: null,
+
     signIn: (username, password) => {
       this.setState({signing: true})
-      firebase.auth().signInWithEmailAndPassword(username, password).catch(
+      auth().signInWithEmailAndPassword(username, password).catch(
         error => this.setState({
           signInError: error,
           signing: false
         })
       )
     },
-    signOut: () => firebase.auth().signOut(),
+    signOut: () => auth().signOut(),
     signUp: (username, password) => {
-      return firebase.auth().createUserWithEmailAndPassword(username, password)
+      return auth().createUserWithEmailAndPassword(username, password)
     }
+
   }
 
   componentDidMount() {
-    this.unsubscribe = firebase.auth().onAuthStateChanged(
+    this.unsubscribe = auth().onAuthStateChanged(
       user => this.setState({ user: user ,
       signing: false})
     )
