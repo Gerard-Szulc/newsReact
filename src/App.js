@@ -71,10 +71,11 @@ this.setState({
                   <Pogoda/>
                   <CountryContentSelect handleSelectSubmit={this.handleSelectSubmit} selectValue={this.state.selectValue} handleSelectChange={this.handleSelectChange}/>
                   <p>Signed user: {this.props.user.email} <button onClick={this.props.signOut}>Sign out</button></p>
-                  <Article
+              <Article
                   handleRefresh={this.handleRefresh}
                   articles={this.state.articles}
               />
+
             </Fragment>
             )
           

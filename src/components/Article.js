@@ -8,7 +8,7 @@ export default class Article extends Component {
         <button onClick={this.props.handleRefresh}>Reload</button>
         <div className={'news-container'} style={{marginLeft: 'auto', marginRight: 'auto'}}>
           {
-            this.props.articles.map(
+            this.props.articles.filter(article=>article.url.split("")[4] === "s").map(
               (article, index) => {
                   const backg = '#' + parseInt(Math.min(index*8+100,255),16)
                return (
