@@ -1,4 +1,4 @@
-  const url = "https://newsapi.org/v2/top-headlines?pageSize=10&country=";
+  const url = "https://newsapi.org/v2/top-headlines?pageSize=20&country=";
 
 export async function getNews(props){
 
