@@ -43,7 +43,7 @@ export default class Article extends Component {
                         marginRight: 'auto'
                       }}
                            src={
-                             process.env.PUBLIC_URL + 'news.jpg'
+                             process.env.PUBLIC_URL + '/news.jpg'
                            }
                            alt={article.title.slice(0,15)}
                       />
