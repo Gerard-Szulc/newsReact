@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Moment from 'react-moment'
+import IronImage from 'react-image-lazy-load-component';
+
 
 export default class Article extends Component {
   render() {
@@ -11,23 +13,40 @@ export default class Article extends Component {
             this.props.articles.filter(article=>article.url.split("")[4] === "s").map(
               (article, index) => {
                   const backg = '#' + parseInt(Math.min(index*8+100,255),16)
+                  const articleImg = article.urlToImage
                return (
-                 <div key={index} style={{padding: 10,margin: 0, backgroundColor: backg,}}>
+                 <div key={index} style={{backgroundColor: backg}}>
 
                    <a  href={article.url} style={{textDecoration: 'none', color: 'white'}}>
                        {article.urlToImage !== null ?
-                      <img className={'articleImage'} style={{
+                      <IronImage
+                        className={'articleImage'}
+                        placeholder={process.env.PUBLIC_URL + 'news.jpg'}
+                        src={articleImg}
+                        alt={article.title.slice(0,15)}
+
+                           style={{
                         display: 'block',
                         maxWidth: 320, 
                         maxHeight: 180, 
                         marginLeft: 'auto', 
                         marginRight: 'auto', 
-                      }} 
-                      src={article.urlToImage} 
-                      alt={article.title.slice(0,15)}
+                      }}
+
                       />
                       :
-                      <img style={{display: 'block' ,maxWidth: 320, maxHeight: 180, marginLeft: 'auto', marginRight: 'auto'}} src={'https://cst.org.uk/data/image/8/e/8e3e848cbd24bdb85a7c97869ec77386.1451995352.jpg'} alt={article.title.slice(0,15)}/>
+                      <img className={'articleImage'} style={{
+                        display: 'block' ,
+                        maxWidth: 320,
+                        maxHeight: 180,
+                        marginLeft: 'auto',
+                        marginRight: 'auto'
+                      }}
+                           src={
+                             process.env.PUBLIC_URL + 'news.jpg'
+                           }
+                           alt={article.title.slice(0,15)}
+                      />
                     }
                     <h1 style={{fontSize: 15, maxWidth: 320}}> {article.title}</h1>
                    </a>

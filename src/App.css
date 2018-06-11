@@ -3,8 +3,11 @@
 }
 
 .App-logo {
+  margin: auto auto;
   animation: App-logo-spin infinite 20s linear;
   align-items: center;
+  height: 60vh;
+  width: auto;
 }
 
 .App-header {
@@ -19,7 +22,9 @@
 }
 
 .App-intro {
+
   font-size: large;
+
 }
 
 @keyframes App-logo-spin {
@@ -30,11 +35,40 @@
 
     display: flex;
     flex-wrap: wrap;
- 
+
 }
 
-.articleImage{
+/*.articleImage{*/
+
+  /*height: 180px;*/
+  /*width: 320px;*/
+
+/*}*/
+.iron-image__container {
+
+  width: 320px;
+  height: 180px;
+
+
+  background-size: 100% 100%;
+}
+
+.iron-image {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
   height: 180px;
   width: 320px;
-  image-rendering: pixelated;
+
+  opacity: 0;
+
+  transition: opacity 1s ease;
+}
+
+.iron-image--fade-in {
+  opacity: 1;
 }
