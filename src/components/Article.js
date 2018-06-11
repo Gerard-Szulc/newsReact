@@ -20,9 +20,10 @@ export default class Article extends Component {
                    <a  href={article.url} style={{textDecoration: 'none', color: 'white'}}>
                        {article.urlToImage !== null ?
                       <IronImage
-                        className={'articleImage'}
+                        className={'articleImage'}   src={articleImg}
+
                         placeholder={process.env.PUBLIC_URL + '/news.jpg'}
-                        src={articleImg}
+
                         alt={article.title.slice(0,15)}
 
                            style={{
