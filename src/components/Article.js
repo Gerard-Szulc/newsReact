@@ -21,7 +21,7 @@ export default class Article extends Component {
                        {article.urlToImage !== null ?
                       <IronImage
                         className={'articleImage'}
-                        placeholder={process.env.PUBLIC_URL + 'news.jpg'}
+                        placeholder={process.env.PUBLIC_URL + '/news.jpg'}
                         src={articleImg}
                         alt={article.title.slice(0,15)}
 
