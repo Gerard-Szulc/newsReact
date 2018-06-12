@@ -35,17 +35,17 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
 
 
 }
 
-/*.articleImage{*/
+.articleImage{
 
-  /*height: 180px;*/
-  /*width: 320px;*/
+  height: 180px;
+  width: 320px;
 
-/*}*/
+}
 .iron-image__container {
 
   width: 320px;

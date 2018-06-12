@@ -58,7 +58,7 @@ this.setState({
   render() {
     
     return (
-    
+
         this.props.user === null ? (
                 this.props.signing ===  true ?
                   <div className='loader'></div> : <div>
@@ -71,10 +71,10 @@ this.setState({
                   <Pogoda/>
                   <CountryContentSelect handleSelectSubmit={this.handleSelectSubmit} selectValue={this.state.selectValue} handleSelectChange={this.handleSelectChange}/>
                   <p>Signed user: {this.props.user.email} <button onClick={this.props.signOut}>Sign out</button></p>
-              <Article
+              {this.state.refreshing === true ? <div className='loader'></div> : <Article
                   handleRefresh={this.handleRefresh}
                   articles={this.state.articles}
-              />
+              />}
 
             </Fragment>
             )
