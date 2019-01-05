@@ -26,7 +26,7 @@ class App extends Component {
     .then(articles => this.setState(
       {articles, refreshing: false}
     )
-  ).catch(  
+    ).catch(
     () =>
      this.setState(
        {refreshing: false}
