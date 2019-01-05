@@ -1,6 +1,13 @@
 {
-  "main.css": "static/css/main.0d8f65f3.css",
-  "main.css.map": "static/css/main.0d8f65f3.css.map",
-  "main.js": "static/js/main.31bb4dd0.js",
-  "main.js.map": "static/js/main.31bb4dd0.js.map"
+  "main.css": "/newsReact/static/css/main.0b94efee.chunk.css",
+  "main.js": "/newsReact/static/js/main.c68b3019.chunk.js",
+  "main.js.map": "/newsReact/static/js/main.c68b3019.chunk.js.map",
+  "static/js/1.b0d6bd2a.chunk.js": "/newsReact/static/js/1.b0d6bd2a.chunk.js",
+  "static/js/1.b0d6bd2a.chunk.js.map": "/newsReact/static/js/1.b0d6bd2a.chunk.js.map",
+  "runtime~main.js": "/newsReact/static/js/runtime~main.bed261c2.js",
+  "runtime~main.js.map": "/newsReact/static/js/runtime~main.bed261c2.js.map",
+  "static/css/main.0b94efee.chunk.css.map": "/newsReact/static/css/main.0b94efee.chunk.css.map",
+  "index.html": "/newsReact/index.html",
+  "precache-manifest.d186bceefe05970141098b415b8e4c6d.js": "/newsReact/precache-manifest.d186bceefe05970141098b415b8e4c6d.js",
+  "service-worker.js": "/newsReact/service-worker.js"
 }
