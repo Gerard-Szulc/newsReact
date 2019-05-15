@@ -5,7 +5,7 @@
 .vscode
 # testing
 /coverage
-
+/src/config
 # production
 /build
 
