@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import {getNews} from "./news";
-import Article from "./components/Article";
+import Article from "./pages/ArticlesPage";
 import Weather from "./Weather/Weather";
 import {withUser} from './contexts/Users';
 import SignInForm from './components/authentication/SignIn'
