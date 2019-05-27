@@ -9,8 +9,8 @@
 # production
 /build
 
-.news.js
-/config
+/src/news.js
+/src/config
 
 # misc
 .DS_Store
